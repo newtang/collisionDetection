@@ -42,21 +42,23 @@ class SpriteManager {
             sprite.x += sprite.vx;
             sprite.y += sprite.vy;
 
-
-            if ((sprite.x > ctx.canvas.width - sprite.radius) && sprite.vx > 0) {
-                sprite.vx = -sprite.vx;
-            }
-            if ((sprite.x < sprite.radius) && sprite.vx < 0) {
-                sprite.vx = -sprite.vx;
-            }
-            if ((sprite.y > ctx.canvas.height - sprite.radius) && sprite.vy > 0) {
-                sprite.vy = -sprite.vy;
-            }
-            if ((sprite.y < sprite.radius) && sprite.vy < 0) {
-                sprite.vy = -sprite.vy;
-            }
+            this.borderCollision(sprite, ctx);
         });
+    }
 
+    private borderCollision(sprite: Circle, ctx: CanvasRenderingContext2D): void {
+        if ((sprite.x > ctx.canvas.width - sprite.radius) && sprite.vx > 0) {
+            sprite.vx = -sprite.vx;
+        }
+        if ((sprite.x < sprite.radius) && sprite.vx < 0) {
+            sprite.vx = -sprite.vx;
+        }
+        if ((sprite.y > ctx.canvas.height - sprite.radius) && sprite.vy > 0) {
+            sprite.vy = -sprite.vy;
+        }
+        if ((sprite.y < sprite.radius) && sprite.vy < 0) {
+            sprite.vy = -sprite.vy;
+        }
     }
 
     private drawCircle(ctx: CanvasRenderingContext2D, circle: Circle): Circle {
