@@ -1,5 +1,3 @@
-// Sprite management and drawing utilities
-
 export interface Circle {
     type: 'circle';
     x: number;
@@ -73,8 +71,10 @@ class SpriteManager {
     }
 }
 
-// Create a singleton instance
+
 export const spriteManager = new SpriteManager();
+
+// i don't know if I really like this here.
 let initialized = false;
 function initSprites(ctx: CanvasRenderingContext2D): void {
     if (initialized) {
