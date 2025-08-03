@@ -1,0 +1,17 @@
+{
+  "name": "typescript-hello-world",
+  "version": "1.0.0",
+  "description": "A simple TypeScript Hello World project for the browser",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "npm run build && open index.html"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": ["typescript", "hello-world", "browser"],
+  "author": "",
+  "license": "MIT"
+} 
