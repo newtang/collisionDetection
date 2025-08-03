@@ -15,7 +15,7 @@ class Game {
     private init(): void {
         this.resizeCanvas();
         window.addEventListener('resize', () => this.resizeCanvas());
-        
+        this.gameLoop();
     }
 
     private resizeCanvas(): void {
